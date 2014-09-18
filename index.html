@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thermostat</title>
+	<meta charset='utf8'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<main class="wrapper">
+	<h2>
+		<span class="temperature"></span>
+	</h2>
+	<h3 class="degrees">degrees</h3>
+	<button class="increaseTemp">+</button>
+	<button class="decreaseTemp">-</button>
+	<button class="reset">R</button>
+
+	<br>
+
+	<input type='checkbox' id='psm' checked >
+	<label for='psm'>Power Saving Mode</label>
+
+	<script src='lib/thermostat.js'></script>
+	<script src='lib/jquery-1.11.1.js'></script>
+	<script>
+	var thermostat = new Thermostat();
+	$(document).ready(function(){
+		function updateTemperature(){
+			$('.temperature').text(thermostat.temperature);
+			$('h2').attr('class', thermostat.energyRating());
+		};
+		
+		$('.temperature').text(thermostat.temperature);
+		$('.increaseTemp').on('click', function tempUp(){
+			thermostat.increaseTemperature();
+			updateTemperature()
+		})
+		$('.decreaseTemp').on('click', function tempDown(){
+			thermostat.decreaseTemperature();
+			updateTemperature()
+		})
+		$('.reset').on('click', function reset(){
+			thermostat.resetThermostat();
+			updateTemperature()
+		})
+		$('#psm').prop('checked', thermostat.powerSavingMode)
+		updateTemperature()
+
+
+
+		
+		$('psm').on('change', function(){
+			updateTemperature()
+			thermostat.powerSavingMode = $('psm').prop('checked');
+		})
+	})
+	</script>
+
+	</main>
+
+</body>
+</html>

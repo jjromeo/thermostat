@@ -1,0 +1,15 @@
+.efficient {
+	color: green;
+}
+
+.average {
+	color: yellow;
+}
+
+.inefficient {
+	color: red
+}
+
+.temperature {
+	font-size: 100px
+}
