@@ -1,7 +1,7 @@
-This is a little thermostat application, made with the following conditions:
-
 Thermostat
-==========
+=======
+
+This was a task to create a thermostat web application in order to learn object oriented programming in javascript as well as look at mixing our code with jquery. It was built under the following specification:
 
 Specification:
 
@@ -22,4 +22,14 @@ Specification:
   - < 25 is yellow,
   - otherwise red
 
-  This was made using jasmine, javascript, html, css and jquery.
+Technologies used include:
+-----------------------
+  - javascript
+  - jquery
+  - jasmine
+  - css
+
+How to use: 
+-------------
+1. Git clone repo
+2. Open index.html
